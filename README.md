@@ -13,7 +13,7 @@ __Latest Release:__ [![Latest Release](https://img.shields.io/github/release/js-
 
 __Status:__
 
-[![Dependency Status](https://img.shields.io/gemnasium/js-data/js-data-levelup.svg?style=flat-square)](https://gemnasium.com/js-data/js-data-levelup) [![Codacity](https://img.shields.io/codacy/69206fcb0df6462ca559610af32fd1fb.svg?style=flat-square)](https://www.codacy.com/public/jasondobry/js-data-levelup/dashboard)
+[![Dependency Status](https://img.shields.io/gemnasium/js-data/js-data-levelup.svg?style=flat-square)](https://gemnasium.com/js-data/js-data-levelup) [![Codacity](https://img.shields.io/codacy/63970b885dd74a8dbdb67084ac7017ba.svg?style=flat-square)](https://www.codacy.com/public/jasondobry/js-data-levelup/dashboard)
 
 __Supported Platforms:__
 
