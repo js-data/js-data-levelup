@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/js-data/js-data/master/js-data.png" alt="js-data logo" title="js-data" align="right" width="64" height="64" />
 
-## js-data-levelup [![npm version](https://img.shields.io/npm/v/js-data-levelup.svg?style=flat-square)](https://www.npmjs.org/package/js-data-levelup) [![Travis CI](https://img.shields.io/travis/js-data/js-data-levelup.svg?style=flat-square)](https://travis-ci.org/js-data/js-data-levelup) [![npm downloads](https://img.shields.io/npm/dm/js-data-levelup.svg?style=flat-square)](https://www.npmjs.org/package/js-data-levelup) [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/js-data/js-data-levelup/blob/master/LICENSE)
+## js-data-levelup [![npm version](https://img.shields.io/npm/v/js-data-levelup.svg?style=flat-square)](https://www.npmjs.org/package/js-data-levelup) [![Circle CI](https://img.shields.io/circleci/project/js-data/js-data-levelup/master.svg?style=flat-square)](https://circleci.com/gh/js-data/js-data-levelup/tree/master) [![npm downloads](https://img.shields.io/npm/dm/js-data-levelup.svg?style=flat-square)](https://www.npmjs.org/package/js-data-levelup) [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/js-data/js-data-levelup/blob/master/LICENSE)
 
 LevelUp adapter for [js-data](http://www.js-data.io/).
 
