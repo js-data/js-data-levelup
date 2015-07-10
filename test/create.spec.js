@@ -1,7 +1,7 @@
 describe('DSLevelUpAdapter#create', function () {
   it('should create a user in levelDB', function () {
     var id;
-    return adapter.create(User, { name: 'John' }).then(function (user) {
+    return adapter.create(User, {name: 'John'}).then(function (user) {
       id = user.id;
       assert.equal(user.name, 'John');
       assert.isString(user.id);
@@ -10,7 +10,7 @@ describe('DSLevelUpAdapter#create', function () {
       .then(function (user) {
         assert.equal(user.name, 'John');
         assert.isString(user.id);
-        assert.deepEqual(user, { id: id, name: 'John' });
+        assert.deepEqual(user, {id: id, name: 'John'});
         return adapter.destroy(User, user.id);
       })
       .then(function (user) {

@@ -2,13 +2,16 @@
 'use strict';
 
 var assert = require('chai').assert;
+assert.equalObjects = function (a, b, m) {
+  assert.deepEqual(JSON.parse(JSON.stringify(a)), JSON.parse(JSON.stringify(b)), m || 'Objects should be equal!');
+};
 var mocha = require('mocha');
 var JSData = require('js-data');
 JSData.DSUtils.Promise = require('bluebird');
 var DSLevelUpAdapter = require('./');
 var adapter = new DSLevelUpAdapter('./db');
 
-var store, DSUtils, DSErrors, User, Post, Comment;
+var store, DSUtils, DSErrors, Profile, User, Post, Comment;
 
 var globals = module.exports = {
   fail: function (msg) {
@@ -34,7 +37,8 @@ var globals = module.exports = {
   }],
   TYPES_EXCEPT_FUNCTION: ['string', 123, 123.123, null, undefined, {}, [], true, false],
   assert: assert,
-  adapter: undefined
+  adapter: undefined,
+  Promise: require('bluebird')
 };
 
 var test = new mocha();
@@ -53,17 +57,22 @@ beforeEach(function () {
   });
   DSUtils = JSData.DSUtils;
   DSErrors = JSData.DSErrors;
+  globals.Profile = global.Profile = Profile = store.defineResource({
+    name: 'profile'
+  });
   globals.User = global.User = User = store.defineResource({
     name: 'user',
     relations: {
       hasMany: {
         post: {
           localField: 'posts',
-          foreignKey: 'userId'
-        },
-        comment: {
-          localField: 'comments',
-          foreignKey: 'userId'
+          foreignKey: 'post'
+        }
+      },
+      hasOne: {
+        profile: {
+          localField: 'profile',
+          localKey: 'profileId'
         }
       }
     }
@@ -115,7 +124,13 @@ afterEach(function (done) {
   globals.adapter = null;
   global.adapter = null;
 
-  adapter.destroyAll(User, {}).then(function () {
+  adapter.destroyAll(Comment).then(function () {
+    return adapter.destroyAll(Post);
+  }).then(function () {
+    return adapter.destroyAll(User);
+  }).then(function () {
+    return adapter.destroyAll(Profile);
+  }).then(function () {
     done();
   }, done);
 });

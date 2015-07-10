@@ -49,6 +49,8 @@ module.exports = function (grunt) {
         },
         externals: [
           'mout/random/guid',
+          'mout/array/unique',
+          'mout/array/map',
           'js-data',
           'levelup'
         ],

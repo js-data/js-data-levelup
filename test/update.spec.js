@@ -1,7 +1,7 @@
 describe('DSLevelUpAdapter#update', function () {
   it('should update a user in levelDB', function () {
     var id;
-    return adapter.create(User, { name: 'John' })
+    return adapter.create(User, {name: 'John'})
       .then(function (user) {
         id = user.id;
         assert.equal(user.name, 'John');
@@ -11,19 +11,19 @@ describe('DSLevelUpAdapter#update', function () {
       .then(function (foundUser) {
         assert.equal(foundUser.name, 'John');
         assert.isString(foundUser.id);
-        assert.deepEqual(foundUser, { id: id, name: 'John' });
-        return adapter.update(User, foundUser.id, { name: 'Johnny' });
+        assert.deepEqual(foundUser, {id: id, name: 'John'});
+        return adapter.update(User, foundUser.id, {name: 'Johnny'});
       })
       .then(function (updatedUser) {
         assert.equal(updatedUser.name, 'Johnny');
         assert.isString(updatedUser.id);
-        assert.deepEqual(updatedUser, { id: id, name: 'Johnny' });
+        assert.deepEqual(updatedUser, {id: id, name: 'Johnny'});
         return adapter.find(User, updatedUser.id);
       })
       .then(function (foundUser) {
         assert.equal(foundUser.name, 'Johnny');
         assert.isString(foundUser.id);
-        assert.deepEqual(foundUser, { id: id, name: 'Johnny' });
+        assert.deepEqual(foundUser, {id: id, name: 'Johnny'});
         return adapter.destroy(User, foundUser.id);
       })
       .then(function (user) {
