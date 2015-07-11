@@ -92,7 +92,6 @@ describe('DSLevelUpAdapter#find', function () {
         throw new Error('Should not have reached here!');
       })
       .catch(function (err) {
-        console.log(err.stack);
         assert.equal(err.message, 'Not Found!');
       });
   });
