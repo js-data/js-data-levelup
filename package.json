@@ -38,7 +38,7 @@
     "jshint-loader": "0.8.3",
     "sinon": "1.15.4",
     "time-grunt": "1.2.1",
-    "webpack-dev-server": "1.10.1"
+    "webpack-dev-server": "1.15.1"
   },
   "scripts": {
     "test": "grunt test"
